@@ -36,6 +36,4 @@ jobs:
         AccessKeySecret: ${{ secrets.ALIYUN_ACCESS_KEY_SECRET }}
         EndPoint: ${{ secrets.ALIYUN_OSS_END_POINT }}
         BucketName: ${{ secrets.ALIYUN_OSS_BUCKET_NAME }}
-      run: |
-        rm -r "$GITHUB_WORKSPACE/output/commit-snapshots" "$GITHUB_WORKSPACE/output/review-drafts"
-        python deploy-oss.py
+      run: python deploy-oss.py
