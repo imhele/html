@@ -6,10 +6,13 @@ BUCKET = oss2.Bucket(AUTH, os.environ.get('EndPoint'), os.environ.get('BucketNam
 
 ROOT_DIR = os.path.join(os.getcwd(), 'output')
 PATH_LIST = [ROOT_DIR]
+PUT_OBJECT_HEADERS = {
+  'x-oss-object-acl': oss2.OBJECT_ACL_PUBLIC_READ
+}
 
 while len(PATH_LIST):
   p = PATH_LIST.pop()
   if os.path.isdir(p):
     PATH_LIST += map(lambda i: os.path.join(p, i), os.listdir(p))
   elif os.path.isfile(p):
-    BUCKET.put_object_from_file(os.path.relpath(p, ROOT_DIR), p)
+    BUCKET.put_object_from_file(os.path.relpath(p, ROOT_DIR), p, headers=PUT_OBJECT_HEADERS)
