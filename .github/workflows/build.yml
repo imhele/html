@@ -2,10 +2,10 @@ name: Build
 on:
   pull_request:
     branches:
-    - zh-cn
+    - master
   push:
     branches:
-    - zh-cn
+    - master
 jobs:
   build:
     name: Build
@@ -22,9 +22,9 @@ jobs:
                    --env "HTML_SOURCE=/whatwg/html" \
                    --mount "type=bind,source=$GITHUB_WORKSPACE/output,destination=/whatwg/output" \
                    --env "HTML_OUTPUT=/whatwg/output" \
-                   whatwg/html-build
+                   imhele/html-build
     - name: Deploy
-      if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/zh-cn' }}
+      if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
       env:
         SERVER: ${{ secrets.MARQUEE_SERVER }}
         SERVER_PUBLIC_KEY: ${{ secrets.MARQUEE_PUBLIC_KEY }}
