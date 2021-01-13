@@ -1,17 +1,9 @@
-This repository hosts the [HTML Standard](https://html.spec.whatwg.org/).
+本仓库为 [HTML Standard 简体中文站](https://html-spec.imhele.com/) 的原始内容，fork 自 https://github.com/whatwg/html 。
 
-### Code of conduct
+### 行为守则
 
-We are committed to providing a friendly, safe and welcoming environment for all. Please read and respect the [WHATWG Code of Conduct](https://whatwg.org/code-of-conduct).
+我们致力于为所有人提供一个友好，安全和热情的环境。请阅读并遵守 [WHATWG Code of Conduct](https://whatwg.org/code-of-conduct)。
 
-### Contribution opportunities
+### 贡献机会
 
-We appreciate all contributions, see the [guidelines for contributing](CONTRIBUTING.md) for details, including information on how to build HTML output from the `source` file so you can preview your changes locally.
-
-### Tests
-
-Tests are in the `html/` directory of the [web-platform-tests repository](https://github.com/web-platform-tests/wpt).
-
-### Blame
-
-As the `source` file is too large for [GitHub's blame utility](https://help.github.com/articles/tracing-changes-in-a-file/), use [blame for `source` on searchfox](https://searchfox.org/whatwg-html/source/source) instead.
+我们感谢所有的贡献，请参阅[贡献指南](CONTRIBUTING.md)以获取详细信息，包括如何从源文件 `source` 构建 HTML 产物，以便您可以在本地预览更改。
