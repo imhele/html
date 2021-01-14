@@ -15,4 +15,6 @@ while len(PATH_LIST):
   if os.path.isdir(p):
     PATH_LIST += map(lambda i: os.path.join(p, i), os.listdir(p))
   elif os.path.isfile(p):
-    BUCKET.put_object_from_file(os.path.relpath(p, ROOT_DIR), p, headers=PUT_OBJECT_HEADERS)
+    target = os.path.relpath(p, ROOT_DIR)
+    print('Uploading %s... (%d files / dirs rest)' % (target, len(PATH_LIST)))
+    BUCKET.put_object_from_file(target, p, headers=PUT_OBJECT_HEADERS)
