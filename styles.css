@@ -5,6 +5,29 @@ html,
     Droid Sans Fallback;
 }
 
+/** zh-CN start */
+
+.note::before {
+  content: "说明";
+}
+.warning::before {
+  content: "\26A0 警告！";
+}
+.example::before {
+  content: "示例";
+}
+dl.domintro::before {
+  content: "对于 Web 开发者（非规范）";
+}
+details.annoying-warning > summary::after {
+  content: " 展开";
+}
+details.annoying-warning[open] > summary::after {
+  content: " 收起";
+}
+
+/** zh-CN end */
+
 .bad,
 .bad *:not(.X\58x) {
   color: gray;
