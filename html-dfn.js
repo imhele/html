@@ -64,7 +64,7 @@ function loadReferences(id, path, specURL) {
   var p = document.createElement('p');
   dfnPanel.appendChild(p);
   if (!dfnMapDone) {
-    p.textContent = 'Loading cross-references…';
+    p.textContent = '正在加载交叉引用…';
     fetch('/xrefs.json')
       .then(response => response.json())
       .then(data => {
@@ -74,7 +74,7 @@ function loadReferences(id, path, specURL) {
           fillInReferences(id);
         }
       }).catch(err => {
-        p.textContent = 'Error loading cross-references.';
+        p.textContent = '加载交叉引用失败。';
       });
   } else {
     fillInReferences(id);
