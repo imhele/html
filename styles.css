@@ -25,6 +25,9 @@ details.annoying-warning > summary::after {
 details.annoying-warning[open] > summary::after {
   content: " 收起";
 }
+dfn[data-lt]:not([data-not-translated])::after {
+  content: "（" attr(data-lt) "）";
+}
 
 /** zh-CN end */
 
