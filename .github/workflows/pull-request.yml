@@ -1,0 +1,23 @@
+name: Pull Request
+on:
+  pull_request:
+    branches:
+      - main
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 2
+          path: "source"
+      - name: Build
+        run: |
+          mkdir output
+          docker run --mount "type=bind,source=$GITHUB_WORKSPACE/source,destination=/imhele/html,readonly=1" \
+                     --env "HTML_SOURCE=/imhele/html" \
+                     --mount "type=bind,source=$GITHUB_WORKSPACE/output,destination=/imhele/output" \
+                     --env "HTML_OUTPUT=/imhele/output" \
+                     imhele/html-build
