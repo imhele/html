@@ -1,9 +1,9 @@
+import os
+import oss2
 from base64 import b64encode
 from functools import partial
 from hashlib import md5
-from http import CaseInsensitiveDict
-import os
-import oss2
+from requests.structures import CaseInsensitiveDict
 
 
 class Uploader:
