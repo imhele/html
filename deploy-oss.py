@@ -21,6 +21,7 @@ class Uploader:
     def start(self) -> None:
         for dirname, dirnames, filenames in os.walk(self.__output_path):
             ossdir = os.path.relpath(dirname, self.__output_path)
+            ossdir = ossdir if ossdir != '.' else ''
             for filename in filenames:
                 osskey = os.path.join(ossdir, filename)
                 filepath = os.path.join(dirname, filename)
